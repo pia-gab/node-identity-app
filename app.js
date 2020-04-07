@@ -55,15 +55,12 @@ for (let i = 0; i <=20; i++) {
 
   onePerson.gender =randChioce(gender);
 
-  let getName = () => {
-    if (onePerson.gender === 'F') {
-      return randChioce(femName);
-    } else {
-      return randChioce(maleName);
-    }
-  }
-
-  onePerson.name = getName();
+  onePerson.name = '';
+  if (onePerson.gender === 'F') {
+    onePerson.name = randChioce(femName);
+  } else {
+    onePerson.name = randChioce(maleName);
+  };
 
   onePerson.surname = lastName[Math.floor(Math.random() * lastName.length)];
   onePerson.age = Math.floor(Math.random() * (50 - 18 + 1)) + 18;
